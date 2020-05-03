@@ -1,0 +1,611 @@
+    1  ls
+    2  docker pull mids205/base
+    3  ls
+    4  cwd
+    5  pwd
+    6  mv -?
+    7  help mv
+    8  man -k mv
+    9  man mv
+   10  ls
+   11  mv /home/kevin-hartman/course_content .
+   12  cwd
+   13  pwd
+   14  ls /home/kevin-hartman
+   15  ls
+   16  cd /home
+   17  ls
+   18  cd kevin_hartman/
+   19  ls
+   20  cd ..
+   21  cd home
+   22  cd jupyter/
+   23  ls
+   24  mv /home/kevin_hartman/w205 .
+   25  sudo mv /home/kevin_hartman/w205 .
+   26  ls
+   27  cd w205
+   28  ls
+   29  cd course-content/
+   30  git fetch master
+   31  sudo git fetch master
+   32  ls
+   33  cd ..
+   34  ls
+   35  cd ..
+   36  sudo rm -r w205
+   37  ls
+   38  docker pull mids205/base
+   39  docker
+   40  docker pull midsw250/base
+   41  docker pull midsw205/base
+   42  mkdir ~/w205
+   43  ls
+   44  docker run -it --rm -v ~/w205:/w205 midsw205/base:latest bash
+   45  ls
+   46  cd w205
+   47  ls
+   48  git clone https://github.com/mids-w205-crook/course-content.git
+   49  git clone https://github.com/mids-w205-crook/signup-kevin-hartman.git
+   50  ls
+   51  git config
+   52  git config --global
+   53  git clone https://github.com/mids-w205-crook/project-1-kevin-hartman.git
+   54  docker images
+   55  docker run -it --rm -v ~/w205:/w205 midsw205/base:latest bash
+   56  ls -l
+   57  docker run -it --rm -v ~/w205:/w205 midsw205/base:latest bash
+   58  cd ..
+   59  docker run -it --rm -v ~/w205:/w205 midsw205/base:latest bash
+   60  ls
+   61  cd w205
+   62  ls
+   63  cd signup-kevin-hartman/
+   64  ls
+   65  git status
+   66  git checkout assignment
+   67  ls
+   68  git add README.md 
+   69  gedit README.md 
+   70  vi README.md 
+   71  git status
+   72  git add
+   73  git commit
+   74  git add README.md 
+   75  git status
+   76  git commit
+   77  git push origin assignment
+   78  exit
+   79  git config --global user.email kevin.hartman@berkeley.edu
+   80  git config --global user.name kevin-hartman
+   81  ls
+   82  cd w205
+   83  ls
+   84  cd signup-kevin-hartman/
+   85  ls
+   86  vi README.md 
+   87  git status
+   88  git push origin assignment
+   89  git add README.md 
+   90  git push origin assignment
+   91  git commit
+   92  git push origin assignment
+   93  shutdown
+   94  sudo shutdown
+   95  ls
+   96  cd ~/w205
+   97  curl -L -o annot_fpid.json https://goo.gl/qWiu7d
+   98  curl -L -o lp_data.csv https://goo.gl/FDFPYB
+   99  sudo apt update
+  100  sudo apt install j
+  101  sudo apt install jq
+  102  ls
+  103  head lp_data.csv 
+  104  tail lp_data.csv 
+  105  head -n1 lp_data.csv 
+  106  cat lp_data.csv | wc -l
+  107  cat lp_data.csv | sort
+  108  cat lp_data.csv | sort -g
+  109  cat lp_data.csv | sort -n
+  110  ls -l
+  111  cat lp_data.csv | sort -g
+  112  jq
+  113  cat lp_data.csv | sort -g
+  114  head annot_fpid.json
+  115  cat annot_fpid.json | jq .
+  116  }
+  117  jupyter@tensorflow-20200105-235909:~/w205$ cat annot_fpid.json | jq '.[][]'
+  118  cat annot_fpid.json | jq '.[][]'
+  119  cat annot_fpid.json | jq '.[][]' -r
+  120  cat annot_fpid.json | jq '.[][]'
+  121  cat annot_fpid.json | jq '.[][]' -r | sort 
+  122  cat annot_fpid.json | jq '.[][]' -r | sort | uniq 
+  123  cat annot_fpid.json | jq '.[][]' -r | sort | uniq -c cat annot_fpid.json | jq '.[][]' -r | sort | uniq -c 
+  124  cat annot_fpid.json | jq '.[][]' -r | sort | uniq -c 
+  125  cat annot_fpid.json | jq '.[][]' -r | sort | uniq -c | sort -g
+  126  cat annot_fpid.json | jq '.[][]' -r | sort | uniq -c | sort -gr | head -10
+  127  bq
+  128  bq query --use_legacy_sql=false 'SELECT count(*) FROM `bigquery-public-data.san_francisco.bikeshare_status`'
+  129  bq query --use_legacy_sql=false '
+  130  SELECT count(*)
+  131  FROM `bigquery-public-data.san_francisco.bikeshare_status`'
+  132  bq query --use_legacy_sql=false 'SELECT count(*) FROM `bigquery-public-data.san_francisco.bikeshare_status`'
+  133  bq query --use_legacy_sql=false "SELECT count(*) FROM \`bigquery-public-data.san_francisco.bikeshare_trips\` where start_station_name = 'Mezes' "
+  134  cat lp_data.csv  | awk -F',' '{ print $2,$1 }' | sed 's/"//' | sort | less
+  135  ls
+  136  cd tutorials/
+  137  ls
+  138  mv Project_1.ipynb ~/home/jupyter
+  139  mv Project_1.ipynb ~/w205/
+  140  cd ../w205/
+  141  ls
+  142  mv Project_1.ipynb  project-1-kevin-hartman/
+  143  ls
+  144  cd project-1-kevin-hartman/
+  145  ls
+  146  git branch project1
+  147  git checkout project1
+  148  bq query --use_legacy_sql=false '
+  149      SELECT count(*)
+  150      FROM
+  151         `bigquery-public-data.san_francisco.bikeshare_trips`'
+  152  bq query --use_legacy_sql=false 'SELECT
+  153        COUNT(*) AS num_trips
+  154      FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  155  bq query --use_legacy_sql=false '
+  156      SELECT
+  157        COUNT(*) AS num_trips
+  158      FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  159  bq query --use_legacy_sql=false '
+  160           SELECT
+  161            min(start_date) AS first_start_date,
+  162            max(end_date) as last_end_date
+  163          FROM `bigquery-public-data.san_francisco.bikeshare_trips`
+  164  '
+  165  bq query --use_legacy_sql=false '
+  166          SELECT
+  167            sum(bikes_available) AS num_bikes,
+  168            max(time) as time_last_snapshot
+  169          FROM `bigquery-public-data.san_francisco.bikeshare_status`
+  170          WHERE time = (select max(time) from `bigquery-public-data.san_francisco.bikeshare_status`)'
+  171  git push
+  172  git checkin
+  173  git committ
+  174  git commit
+  175  git add Project_1.ipynb 
+  176  git add example.ipynb 
+  177  git add result.csv
+  178  ls
+  179  git commit
+  180  git push
+  181  git push origin project1
+  182  ssh-keygen -t rsa -b 4096 -C "kevin.hartman@berkeley.edu"
+  183  eval "$(ssh-agent -s)"
+  184  ssh-add ~/.ssh/id_rsa
+  185  cd ~/.ssh
+  186  ls
+  187  vi id_rsa.pub
+  188  sudo apt-get install xclip
+  189  xclip -o -sel clip < ~/.ssh/id_rsa.pub
+  190  ls
+  191  vi id_rsa.pub 
+  192  cd ~/w205/
+  193  ls
+  194  cd project-1-kevin-hartman/
+  195  ls
+  196  git push target project1
+  197  git push project1
+  198  git push origin project1
+  199  ls
+  200  cd ..
+  201  rm project-1-kevin-hartman/ -r
+  202  ls
+  203  git checkout git@github.com:mids-w205-crook/project-1-kevin-hartman.git
+  204  git clone git@github.com:mids-w205-crook/project-1-kevin-hartman.git
+  205  ls
+  206  cd project-1-kevin-hartman/
+  207  ls
+  208  git checkout project1
+  209  ls
+  210  sudo shutdown
+  211  bq query --use_legacy_sql=false '
+  212       SELECT  CONCAT(start_station_name, CONCAT(' --> ', end_station_name)) as trip_name,
+  213               COUNT(*) as num_trips
+  214         FROM `bigquery-public-data.san_francisco.bikeshare_trips`
+  215        WHERE ((EXTRACT(HOUR FROM start_date) >= 7 and EXTRACT(HOUR FROM start_date) <= 9) OR
+  216               (EXTRACT(HOUR FROM start_date) >= 16 and EXTRACT(HOUR FROM start_date) <= 18)) AND
+  217               EXTRACT(DAYOFWEEK FROM start_date) IN (2, 3, 4, 5, 6)
+  218     GROUP BY trip_name
+  219     ORDER BY num_trips DESC
+  220        LIMIT 5'bq query --use_legacy_sql=false '
+  221       SELECT  CONCAT(start_station_name, CONCAT(' --> ', end_station_name)) as trip_name,
+  222               COUNT(*) as num_trips
+  223         FROM `bigquery-public-data.san_francisco.bikeshare_trips`
+  224        WHERE ((EXTRACT(HOUR FROM start_date) >= 7 and EXTRACT(HOUR FROM start_date) <= 9) OR
+  225               (EXTRACT(HOUR FROM start_date) >= 16 and EXTRACT(HOUR FROM start_date) <= 18)) AND
+  226               EXTRACT(DAYOFWEEK FROM start_date) IN (2, 3, 4, 5, 6)
+  227     GROUP BY trip_name
+  228     ORDER BY num_trips DESC
+  229        LIMIT 5'
+  230  bq query --use_legacy_sql=false '
+  231       SELECT  CONCAT(start_station_name, CONCAT(' --> ', end_station_name)) as trip_name,
+  232               COUNT(*) as num_trips
+  233         FROM `bigquery-public-data.san_francisco.bikeshare_trips`
+  234        WHERE ((EXTRACT(HOUR FROM start_date) >= 7 and EXTRACT(HOUR FROM start_date) <= 9) OR
+  235               (EXTRACT(HOUR FROM start_date) >= 16 and EXTRACT(HOUR FROM start_date) <= 18)) AND
+  236               EXTRACT(DAYOFWEEK FROM start_date) IN (2, 3, 4, 5, 6)
+  237     GROUP BY trip_name
+  238     ORDER BY num_trips DESC
+  239        LIMIT 5'
+  240  bq query --use_legacy_sql=false '
+  241       SELECT  start_station_name, end_station_name,
+  242               COUNT(*) as num_trips
+  243         FROM `bigquery-public-data.san_francisco.bikeshare_trips`
+  244        WHERE ((EXTRACT(HOUR FROM start_date) >= 7 and EXTRACT(HOUR FROM start_date) <= 9) OR
+  245               (EXTRACT(HOUR FROM start_date) >= 16 and EXTRACT(HOUR FROM start_date) <= 18)) AND
+  246               EXTRACT(DAYOFWEEK FROM start_date) IN (2, 3, 4, 5, 6)
+  247     GROUP BY start_station_name, end_station_name
+  248     ORDER BY num_trips DESC
+  249        LIMIT 5'
+  250  cd w205
+  251  ls
+  252  cd course-content/
+  253  git pull -all
+  254  git pull --all
+  255  docker network ls
+  256  docker network prune
+  257  docker ps -a
+  258  docker pull midsw205/base:latest
+  259  docker pull midsw205/base:0.1.8
+  260  docker pull midsw205/base:0.1.9
+  261  docker pull redis
+  262  docker pull confluentinc/cp-zookeeper:latest
+  263  docker pull confluentinc/cp-kafka:latest
+  264  docker pull midsw205/spark-python:0.0.5
+  265  docker pull midsw205/spark-python:0.0.6
+  266  docker pull midsw205/cdh-minimal:latest
+  267  docker pull midsw205/hadoop:0.0.2
+  268  docker pull midsw205/presto:0.0.1
+  269  docker-compose
+  270  suod apt update
+  271  sudo apt update
+  272  sudo apt install docker-compose
+  273  docker run redis
+  274  docker ps -a
+  275  docker rm -f practical_hellman
+  276  docker ps -a
+  277  docker run -d --name redis redis
+  278  docker ps -a
+  279  docker rm -f redis
+  280  docker run -d --name redis -p 6379:6379 redis
+  281  docker ps -a
+  282  docker rm -f redis
+  283  sudo pip3 install redis
+  284  mkdir ~/w205/redis-standalone
+  285  cd ~/w205/redis-standalone
+  286  cp ../course-content/05-Storing-Data-II/example-0-docker-compose.yml docker-compose.yml
+  287  docker-compose up -d
+  288  docker-compose ps
+  289  docker-compose logs redis
+  290  ipython
+  291  docker-compose down
+  292  docker-compose ps
+  293  mkdir ~/w205/redis-cluster
+  294  cd ~/w205/redis-cluster
+  295  cp ../course-content/05-Storing-Data-II/example-1-docker-compose.yml docker-compose.yml
+  296  docker-compose up -d
+  297  docker-compose ps
+  298  docker-compose logs redis
+  299  docker-compose exec mids bash
+  300  docker-compose down
+  301  docker-compose ps
+  302  cp ../course-content/05-Storing-Data-II/example-3-docker-compose.yml docker-compose.yml
+  303  docker-compose up -d
+  304  docker-compose logs mids
+  305  docker-compose down
+  306  cp ../course-content/05-Storing-Data-II/example-4-docker-compose.yml docker-compose.yml
+  307  cd ~/w205/
+  308  curl -L -o trips.csv https://goo.gl/QvHLKe
+  309  cd ~/w205/redis-cluster
+  310  docker-compose up -d
+  311  docker-compose logs mids
+  312  docker-compose down
+  313  docker ps -a
+  314  cd ..
+  315  ls
+  316  cd redis-standalone/
+  317  ls
+  318  view docker-compose.yml 
+  319  cd ..
+  320  cd redis-cluster/
+  321  ls
+  322  view docker-compose.yml 
+  323  docker ps -a
+  324  docker-compose -ps
+  325  docker-compose ps
+  326  cp ../course-content/05-Storing-Data-II/example-1-docker-compose.yml docker-compose.yml
+  327  docker-compose up -d
+  328  docker-compose ps
+  329  docker-compose logs redis
+  330  docker-compose exec mids bash
+  331  cp ../course-content/05-Storing-Data-II/example-2-docker-compose.yml docker-compose.yml
+  332  docker-compose down
+  333  docker-compose up -d
+  334  docker-compose exec mids jupyter notebook --no-browser --port 8888 --ip 0.0.0.0 --allow-root
+  335  docker-compose down
+  336  cp ../course-content/05-Storing-Data-II/example-4-docker-compose.yml docker-compose.yml
+  337  docker-compose up -d
+  338  docker-compose logs mids
+  339  docker-compose down
+  340  docker-compose ps
+  341  docker -ps a
+  342  docker -ps
+  343  docker -psa
+  344  docker ps
+  345  docker ps -a
+  346  bq query --use_legacy_sql=false '
+  347       SELECT TIME_ADD(TIME "00:00:00", interval (CAST(AVG(duration_sec) AS INT64)) SECOND) as average_duration_minutes
+  348         FROM `bigquery-public-data.san_francisco.bikeshare_trips'
+  349  bq query --use_legacy_sql=false '
+  350       SELECT TIME_ADD(TIME "00:00:00", interval (CAST(AVG(duration_sec) AS INT64)) SECOND) as average_duration_minutes
+  351         FROM `bigquery-public-data.san_francisco.bikeshare_trips`'
+  352  docker network ls
+  353  docker network prune
+  354  docker network ls
+  355  docker images
+  356  cd ~/w205/spark-with-kafka
+  357  docker-compose logs -f kafka
+  358  docker-compose up -d
+  359  docker-compose down
+  360  docker-compose logs -f kafka
+  361  cd ..
+  362  ls
+  363  cd project-2-kevin-hartman/
+  364  ls
+  365  git status
+  366  git branch assignment
+  367  git checkout assignment
+  368  git status
+  369  ls
+  370  cd ..
+  371  ls
+  372  cd project-2-kevin-hartman/
+  373  cp ~/w205/course-content/07-Sourcing-Data/docker-compose.yml .
+  374  vi docker-compose.yml 
+  375  docker-compose up
+  376  cd w295
+  377  cd w205
+  378  cd spark-with-kafka/
+  379  docker-compose exec spark pyspark
+  380  cd ..
+  381  cd project-2-kevin-hartman/
+  382  docker-compose exec spark bash
+  383  cd ..
+  384  docker-compose exec spark bash
+  385  cd project-2-kevin-hartman/
+  386  docker-compose exec spark bash
+  387  curl -L -o assessment-attempts-20180128-121051-nested.json https://goo.gl/ME6hjp`
+  388  curl -L -o assessment-attempts-20180128-121051-nested.json https://goo.gl/ME6hjp
+  389  curl -L -o assessment-attempts-20180128-121051-nested.json https://goo.gl/ME6hjp`
+  390  curl -L -o assessment-attempts-20180128-121051-nested.json https://goo.gl/ME6hjp
+  391  curl -L -o assessment-attempts-20180128-121051-nested.json https://goo.gl/ME6hjp`curl -L -o assessment-attempts-20180128-121051-nested.json https://goo.gl/ME6hjp`
+  392  exit
+  393  exit()
+  394  curl -L -o assessment-attempts-20180128-121051-nested.json https://goo.gl/ME6hjp
+  395  ls
+  396  docker-compose down
+  397  sudo shutdown
+  398  cd ~/w205/course-content
+  399  git pull --all
+  400  docker ps -a
+  401  docker pull midsw205/base:latest
+  402  docker pull midsw205/base:0.1.8
+  403  docker pull midsw205/base:0.1.9
+  404  docker pull redis
+  405  docker pull confluentinc/cp-zookeeper:latest
+  406  docker pull confluentinc/cp-kafka:latest
+  407  docker pull midsw205/spark-python:0.0.5
+  408  docker pull midsw205/spark-python:0.0.6
+  409  docker pull midsw205/cdh-minimal:latest
+  410  docker pull midsw205/hadoop:0.0.2
+  411  docker pull midsw205/presto:0.0.1
+  412  mkdir ~/w205/spark-with-kafka
+  413  cd ~/w205/spark-with-kafka
+  414  cp ~/w205/course-content/07-Sourcing-Data/docker-compose.yml .
+  415  docker-compose up -d
+  416  docker-compose exec kafka kafka-topics --create --topic foo --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  417  docker-compose exec kafka kafka-topics --describe --topic foo --zookeeper zookeeper:32181
+  418  docker-compose exec kafka bash -c "seq 42 | kafka-console-producer --request-required-acks 1 --broker-list kafka:29092 --topic foo && echo 'Produced 42 messages.'"
+  419  curl -L -o github-example-large.json https://goo.gl/Y4MD58
+  420  cd ~/w205/spark-with-kafka
+  421  docker-compose down
+  422  docker-compose up -d
+  423  docker-compose exec kafka kafka-topics --create --topic foo --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  424  docker-compose exec kafka kafka-topics --describe --topic foo --zookeeper zookeeper:32181
+  425  docker-compose exec mids bash -c "cat /w205/github-example-large.json"
+  426  docker-compose exec mids bash -c "cat /w205/github-example-large.json | jq '.[]' -c | kafkacat -P -b kafka:29092 -t foo && echo 'Produced 100 messages.'"
+  427  docker-compose down
+  428  cd ~/w205/spark-with-kafka-and-hdfs
+  429  docker-compose exec spark pyspark
+  430  docker compose down
+  431  docker compose -d
+  432  docker-compose down
+  433  docker-compose ps
+  434  cd ..
+  435  cd project-2-kevin-hartman/
+  436  git status
+  437  cp ~/w205/course-content/08-Querying-Data//docker-compose.yml  .
+  438  ls -l
+  439  vi docker-compose.yml 
+  440  docker-compose down
+  441  docker-compose up -d
+  442  docker-compose exec spark bash
+  443  docker pull midsw205/base:latest
+  444  docker pull midsw205/base:0.1.8
+  445  docker pull midsw205/base:0.1.9
+  446  docker pull redis
+  447  docker pull confluentinc/cp-zookeeper:latest
+  448  docker pull confluentinc/cp-kafka:latest
+  449  docker pull midsw205/spark-python:0.0.5
+  450  docker pull midsw205/spark-python:0.0.6
+  451  docker pull midsw205/cdh-minimal:latest
+  452  docker pull midsw205/hadoop:0.0.2
+  453  docker pull midsw205/presto:0.0.1
+  454  cd ~/w205/spark-with-kafka-and-hdfs
+  455  docker-compose exec cloudera hadoop fs -ls /tmp/
+  456  ls -l /tmp
+  457  docker-compose exec kafka kafka-topics --create --topic commits --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  458  cd ~/w205
+  459  curl -L -o github-example-large.json https://goo.gl/Y4MD58
+  460  cd ~/w205/spark-with-kafka-and-hdfs
+  461  docker-compose exec mids bash -c "cat /w205/github-example-large.json | jq '.[]' -c | kafkacat -P -b kafka:29092 -t commits"
+  462  docker-compose exec cloudera hadoop fs -ls /tmp/
+  463  docker-compose exec cloudera hadoop fs -ls /tmp/commits/
+  464  docker-compose exec cloudera hadoop fs -ls /tmp/some_commit_info/
+  465  cd ..
+  466  ls
+  467  ls -l
+  468  cd spark-with-kafka-and-hdfs/
+  469  ls
+  470  docker-compose exec cloudera hadoop fs -ls
+  471  docker-compose exec cloudera hadoop fs -ls /tmp
+  472  docker-compose exec cloudera hadoop fs -ls -l
+  473  docker-compose exec cloudera hadoop fs -ls .
+  474  cd ..
+  475  cd project-2-kevin-hartman/
+  476  ls
+  477  cd ~/w205/spark-with-kafka-and-hdfs
+  478  docker-compose exec kafka kafka-topics --create --topic players --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  479  docker-compose exec mids bash -c "cat /w205/players.json | jq '.[]' -c | kafkacat -P -b kafka:29092 -t players"
+  480  docker-compose exec cloudera hadoop fs -ls /tmp/
+  481  docker-compose exec cloudera hadoop fs -ls /tmp/players/
+  482  docker-compose exec cloudera hadoop fs -ls /tmp/
+  483  docker-compose exec cloudera hadoop fs -ls /tmp/extracted_players/
+  484  ls /tmp
+  485  cd ..
+  486  cd project-2-kevin-hartman/
+  487  docker-compose exec spark env PYSPARK_DRIVER_PYTHON=jupyter PYSPARK_DRIVER_PYTHON_OPTS='notebook --no-browser --port 8888 --ip 0.0.0.0 --allow-root' pyspark
+  488  sudo shutdown
+  489  cd ~/w205/course-content
+  490  git pull --all
+  491  docker ps -a
+  492  docker  network ls
+  493  cd ..
+  494  mkdir spark-with-kafka-and-hdfs
+  495  ls
+  496  cd spark-with-kafka-and-hdfs/
+  497  cp ~/w205/course-content/08-Querying-Data/docker-compose.yml
+  498  cd ~/w205
+  499  curl -L -o players.json https://goo.gl/vsuCpZ
+  500  cd ~/w205/spark-with-kafka-and-hdfs
+  501  docker-compose up -d
+  502  ls
+  503  cp ~/w205/course-content/08-Querying-Data/dock
+  504  er-compose.yml
+  505  cp ~/w205/course-content/08-Querying-Data/docker-compose.yml .
+  506  docker-compose up -d
+  507  docker-compose logs -f kafka
+  508  docker-compose exec mids curl http://localhost:5000/
+  509  ls
+  510  cd w205/
+  511  ls
+  512  cd flask-with-kafka/
+  513  docker-compose exec mids curl http://localhost:5000/
+  514  docker-compose exec mids curl http://localhost:5000/purchase_a_sword
+  515  docker-compose exec mids curl http://localhost:5000/
+  516  docker-compose exec mids curl http://localhost:5000/purchase_a_sword
+  517  openssl s_client -connect api.wheretheiss.at:443
+  518  openssl x509 -in google.com.1.crt -noout -text
+  519  echo | openssl s_client -connect google.com:443 2>&1 | sed --quiet '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > google.com.1.crt
+  520  cat google.com.1.crt
+  521  openssl x509 -in google.com.1.crt -noout -text
+  522  docker ps -a
+  523  docker network prune
+  524  docker ps -a
+  525  docker rm -f f7e591b46a7b
+  526  docker rm -f c2ebc71bedc3
+  527  docker rm -f 88fdc8d1b360
+  528  docker rm -f 2094e0c74031
+  529  docker rm -f 86c8f30676ae
+  530  docker ps -a
+  531  mkdir ~/w205/flask-with-kafka
+  532  cd ~/w205/flask-with-kafka
+  533  cp ~/w205/course-content/09-Ingesting-Data/docker-compose.yml .
+  534  docker-compose up -d
+  535  docker-compose exec kafka kafka-topics --create --topic events --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181
+  536  cp ~/w205/course-content/09-Ingesting-Data/basic_game_api.py .
+  537  docker-compose exec mids env FLASK_APP=/w205/flask-with-kafka/basic_game_api.py flask run
+  538  docker pull midsw205/base:latest
+  539  docker pull midsw205/base:0.1.8
+  540  docker pull midsw205/base:0.1.9
+  541  docker pull redis
+  542  docker pull confluentinc/cp-zookeeper:latest
+  543  docker pull confluentinc/cp-kafka:latest
+  544  docker pull midsw205/spark-python:0.0.5
+  545  docker pull midsw205/spark-python:0.0.6
+  546  docker pull midsw205/cdh-minimal:latest
+  547  docker pull midsw205/hadoop:0.0.2
+  548  docker pull midsw205/presto:0.0.1
+  549  cp ~/w205/course-content/09-Ingesting-Data/game_api.py .
+  550  docker-compose exec mids env FLASK_APP=/w205/flask-with-kafka/game_api.py flask run
+  551  docker-compose down
+  552  docker ps -a
+  553  ssh kevin@99.104.68.59
+  554  ssh -L 6006:localhost:6006 kevin@99.104.68.59
+  555  sudo shutdown
+  556  cd w205/
+  557  ls
+  558  cd project-2-kevin-hartman/
+  559  ls
+  560  ./bin/startup.sh 
+  561  ./bin/startup.sh up
+  562  ./bin/startup.sh stop
+  563  cd bin
+  564  rn startup.sh launch-containers.sh
+  565  mv startup.sh cloud-stack.sh
+  566  ls
+  567  vi cloud-stack.sh 
+  568  cd ..
+  569* ./bin/cloud-stack.sh up[A
+  570  ./bin/cloud-stack.sh down
+  571  cd bin/
+  572  mv cloud-stack.sh project2-stack.sh
+  573  vi project2-stack.sh 
+  574  cd ..
+  575  ls
+  576  docker-compose
+  577  docker-compose up
+  578  docker-compose down
+  579  nc -z
+  580  cd bin
+  581  ls
+  582  docker stats
+  583  cd ..
+  584  ./bin/project2-stack.sh down
+  585  cd bin
+  586  vi project2-stack.sh 
+  587  cd ..
+  588  ./bin/startup.sh 
+  589  docker-compose exec cloudera hadoop fs -ls /tmp/
+  590  ls
+  591  ls /tmp
+  592  ls /tmp -l
+  593  cd bin
+  594  vi startup.sh 
+  595  cp startup.sh shutdown.sh
+  596  vi shutdown.sh
+  597  ls
+  598  cd ..
+  599  ./bin/shutdown.sh 
+  600  ./bin/startup.sh
+  601  docker-compose exec spark bash
+  602  docker-compose exec spark ln -s /w205 w205
+  603  docker-compose exec spark bash
+  604  ./bin/shutdown.sh 
+  605  ./bin/startup.sh 
+  606  ./bin/shutdown.sh 
+  607  ./bin/startup.sh 
+  608  docker-compose exec cloudera hadoop fs -ls /tmp/
+  609  docker-compose exec cloudera hadoop fs -ls /tmp/extracted_assessments
+  610  ./bin/shutdown.sh 
+  611  history > kevin-hartman-history.txt
